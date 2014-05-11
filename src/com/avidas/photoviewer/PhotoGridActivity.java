@@ -1,13 +1,13 @@
 package com.avidas.photoviewer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.Toast;
 
 public class PhotoGridActivity extends Activity {
 
@@ -21,7 +21,11 @@ public class PhotoGridActivity extends Activity {
 
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	            Toast.makeText(PhotoGridActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+	        	// Sending image id to FullScreenActivity
+                Intent i = new Intent(getApplicationContext(), DetailActivity.class);
+                // passing array index
+                i.putExtra("id", position);
+                startActivity(i);
 	        }
 	    });
 	}
