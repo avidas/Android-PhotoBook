@@ -7,6 +7,9 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+/*
+ * Adapter for gridview
+ */
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
 
